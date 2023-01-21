@@ -1,0 +1,9 @@
+[submodule "ceres-solver"]
+	path = ceres-solver
+	url = https://ceres-solver.googlesource.com/ceres-solver
+[submodule "LiDAR_IMU_Init"]
+	path = LiDAR_IMU_Init
+	url = https://github.com/rosblox/LiDAR_IMU_Init.git
+[submodule "livox_ros_driver"]
+	path = livox_ros_driver
+	url = https://github.com/rosblox/livox_ros_driver.git
