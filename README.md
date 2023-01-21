@@ -54,7 +54,7 @@ Note, the `run` command is an alias defined in the `~/.bashrc` to launch the ROS
 
 This repository's automatically built Docker image is uploaded to Github's Container Registry (ghcr.io). Newer versions of the Docker image can be pulled by running
 ```
-docker pull ghcr.io/rosblox/ros-lidar-imu-init:melodic
+docker pull ghcr.io/rosblox/ros-lidar-imu-init:noetic
 ```
 
 ## Build Docker image locally

@@ -34,4 +34,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/rosblox/${{ github.event.repository.name }}:melodic
+          tags: ghcr.io/rosblox/${{ github.event.repository.name }}:noetic
