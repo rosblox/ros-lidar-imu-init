@@ -49,6 +49,7 @@ Note, the `run` command is an alias defined in the `~/.bashrc` to launch the ROS
 
 ## Additional info
 
+This section details the workflow with a ROS package in a Docker image. Basic knowledge about Docker images, containers and the container registry is beneficial.
 
 ### Update your (local) Docker image
 
@@ -57,13 +58,6 @@ This repository's automatically built Docker image is uploaded to Github's Conta
 docker pull ghcr.io/rosblox/ros-lidar-imu-init:noetic
 ```
 
-### Build Docker image locally
-For convenience, there is a `build.sh` script located at the root of the repository. Run 
-```
-./build.sh
-```
-to build the Docker image on your local computer, e.g. when you made changes to the Dockerfile.
-
 ### Update the ROS package in the (automatically built) Docker image
 
 To include updates of the ROS package's parent repository,
@@ -71,3 +65,36 @@ To include updates of the ROS package's parent repository,
 , in the automatically built Docker images, please create a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to 
 [ROSblox's LiDAR_IMU_Init](https://github.com/rosblox/LiDAR_IMU_Init) 
 fork with the changes. 
+
+### Build Docker image locally
+For convenience, there is a `build.sh` script located at the root of the repository. Run 
+```
+./build.sh
+```
+to build the Docker image on your local computer, e.g. when you made changes to the Dockerfile.
+
+
+### Build ROS package inside a Docker container
+
+The `run.sh` script mounts this repository's submodule folders into the created container when executed. Inside the container, the ROS packages can be compiled by running 
+```
+build
+``` 
+The `build` command is an alias  defined in the `~/.bashrc` to execute `catkin_make`.Note, this will compile the ROS package including changes of its source code. 
+
+
+## Acknowledgements
+
+This repository solely automates the building and delivery of a Docker image for a popular ROS package. All credit for the content of the ROS package goes to the original authors of the ROS package. Thank you for open sourcing your code!
+
+
+## Contact
+
+The Docker image of this ROS package is built as part of the [ROSbloX project](https://rosblox.github.io).
+
+
+Website: [ROSbloX](https://rosblox.github.io)  
+Connect with us on Git: [ROSbloX Git](https://github.com/rosblox)  
+Join us on Slack: [ROSbloX Workspace](https://join.slack.com/t/rosblox/shared_invite/zt-1c6ifc24n-OswQtNwORkq588QPNZ2KoA)  
+Follow us on Twitter: [ROSbloX (@xploros)](https://twitter.com/xploros)  
+Subscribe to our Youtube channel: [ROSbloX Youtube](https://www.youtube.com/channel/UC8t8kygP_QODOw7MCxGZJVg)  
